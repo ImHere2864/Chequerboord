@@ -1,8 +1,14 @@
 const SIZE = 8;
 
 function fieldColor(row:number, column;number):string {
-    //TODO
-    return "";
+    if (row + column % 2 === 0) 
+    {
+        return "□"
+    }
+    else
+    {
+        return "■";
+    }
 }
 
 function fieldSize(size:number):string[][] {
