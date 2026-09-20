@@ -1,7 +1,7 @@
 const SIZE = 8;
 
-function fieldColor(row:number, column;number):string {
-    if (row + column % 2 === 0) 
+function fieldColor(row:number, column:number):string {
+    if ((row + column) % 2 === 0) 
     {
         return "□"
     }
