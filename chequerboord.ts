@@ -12,8 +12,15 @@ function fieldColor(row:number, column;number):string {
 }
 
 function fieldSize(size:number):string[][] {
-    //TODO
-    return [];
+    const board: string[][] = [];
+    for (let row = 0; row < size; row++){
+        const rowOfFields: string[] = [];
+        for (let column = 0; column < size; column++){
+            rowOfFields.push(fieldColor(row, column));
+        }
+        board.push(rowOfFields);
+    }
+    return board;
 }
 
 function createBoard(board:string[][]):void {
