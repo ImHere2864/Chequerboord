@@ -24,7 +24,9 @@ function fieldSize(size:number):string[][] {
 }
 
 function createBoard(board:string[][]):void {
-    //TODO
+    for (const row of board) {
+        console.log(row.join(""));
+    }
 }
 
 createBoard(fieldSize(SIZE))
