@@ -5,6 +5,6 @@ How to start:
   cd Chequerboord
   npm install
   npx tsc
-  node chequerboord.ts
+  npx serve
 
 Bam!
