@@ -5,19 +5,20 @@
     <title>Checkerboard</title>
     <style>
         #board {
-            display: inline-block;
+            display: grid;
+            grid-template-columns: repeat(8, 50px);
             border: 2px solid #737373;
         }
-        .row {
-            display: flex;
-        }
-        .cell {
+
+        .square {
             width: 50px;
             height: 50px;
         }
+
         .light {
             background-color: white;
         }
+
         .dark {
             background-color: black;
         }
@@ -26,6 +27,7 @@
 <body>
     <h1>Checkerboard 8×8</h1>
     <div id="board"></div>
+
     <script type="module" src="chequerboord.js"></script>
 </body>
 </html>
