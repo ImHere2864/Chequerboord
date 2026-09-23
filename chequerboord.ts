@@ -1,39 +1,26 @@
 const SIZE = 8;
 
-function fieldColor(row: number, column: number): string {
-    if ((row + column) % 2 === 0) {
-        return "light";
-    } else {
-        return "dark";
-    }
-}
+function createChequerboord() {
+    const board = document.getElementById("board");
 
-function fieldSize(size: number): string[][] {
-    const board: string[][] = [];
-    for (let row = 0; row < size; row++) {
-        const rowOfFields: string[] = [];
-        for (let column = 0; column < size; column++) {
-            rowOfFields.push(fieldColor(row, column));
+    if (!board) {
+        return;
+    }
+
+    for (let row = 0; row < SIZE; row++) {
+        for (let col = 0; col < SIZE; col++) {
+            const square = document.createElement("div");
+
+            const isLight = (row + col) % 2 === 0;
+
+            square.classList.add("square");
+            square.classList.add(isLight ? "light" : "dark");
+
+            board.appendChild(square);
         }
-        board.push(rowOfFields);
-    }
-    return board;
-}
-
-function createBoard(board: string[][]): void {
-    const boardElement = document.getElementById("board");
-    if (!boardElement) return;
-
-    for (const row of board) {
-        const rowDiv = document.createElement("div");
-        rowDiv.className = "row";
-        for (const color of row) {
-            const cellDiv = document.createElement("div");
-            cellDiv.className = "cell " + color;
-            rowDiv.appendChild(cellDiv);
-        }
-        boardElement.appendChild(rowDiv);
     }
 }
 
-createBoard(fieldSize(SIZE));
+createChequerboord();
+
+export {};
